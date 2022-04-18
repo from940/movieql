@@ -1,0 +1,17 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/from940/movieql",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.9",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "graphql-yoga": "^1.14.8"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  }
+}
