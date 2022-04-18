@@ -1,15 +1,25 @@
+type Director {
+    peopleNm: String
+}
+
+type Company {
+    companyCd: String
+    companyNm: String
+}
+
 type Movie {
-    id: Int!
-    name: String!
-    score: Int!
+    movieCd: String!
+    movieNm: String
+    movieNmEn: String
+    openDt: String
+    repNationNm: String
+    genreAlt: String
+    directors: [Director]
+    companys: [Company]
 }
 
 type Query {
-    movies: [Movie]!
-    movie(id: Int!): Movie
-}
-
-type Mutation {
-    addMovie(name: String!, score: Int!): Movie!
-    deleteMovie(id: Int!): Boolean!
+    movies: [Movie]
+    moviesByYear(year: Int!): [Movie]
+    moviesByMovieName(name: String!): [Movie]
 }
