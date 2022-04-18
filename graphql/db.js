@@ -1,55 +1,53 @@
-export const people = [
+let movies = [
     {
         id: 0,
-        name: "Koo",
-        age: 25,
-        gender: "femal",
+        name: "어벤져스 - 홈커밍",
+        score: 2
     },
     {
         id: 1,
-        name: "Kim",
-        age: 28,
-        gender: "male",
+        name: "스파이더맨 - 라스트게임",
+        score: 4
     },
     {
         id: 2,
-        name: "Lim",
-        age: 27,
-        gender: "female",
+        name: "스타워즈 - 뉴타운",
+        score: 5
     },
     {
         id: 3,
-        name: "Lee",
-        age: 32,
-        gender: "male",
-    },
-    {
-        id: 4,
-        name: "Gab",
-        age: 32,
-        gender: "male",
-    },
-    {
-        id: 5,
-        name: "KimBab",
-        age: 18,
-        gender: "female",
-    },
-    {
-        id: 6,
-        name: "Kang",
-        age: 31,
-        gender: "female",
-    },
-    {
-        id: 7,
-        name: "우우",
-        age: 37,
-        gender: "male",
+        name: "롤링루즈",
+        score: 10
     },
 ];
 
+export const getMovies = () => movies;
+
 export const getById = (id) => {
-    const filteredPeople = people.filter(person => person.id === id);
-    return filteredPeople[0];
+    const filteredMovie = movies.filter(movie => movie.id === id);
+    return filteredMovie[0];
+};
+
+export const deleteMovie = (id) => {
+    const cleanedMovies = movies.filter(movie => movie.id !== id);
+    if (movies.length > cleanedMovies.length) {
+        movies = cleanedMovies;
+        return true;
+    } else {
+        return false;
+    }
+};
+
+const findLastId = () => {
+    return movies[movies.length-1].id;
+};
+
+export const addMovie = (name, score) => {
+    const newMovie = {
+        id: findLastId()+1,
+        name,
+        score
+    };
+    movies.push(newMovie);
+    return newMovie;
 };
