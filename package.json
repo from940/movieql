@@ -9,6 +9,7 @@
     "@babel/core": "^7.17.9",
     "@babel/node": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
+    "axios": "^0.26.1",
     "graphql-yoga": "^1.14.8"
   },
   "scripts": {
